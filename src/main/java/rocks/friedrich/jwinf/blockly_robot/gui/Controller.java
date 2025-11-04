@@ -1,12 +1,12 @@
 package rocks.friedrich.jwinf.blockly_robot.gui;
 
-import ea.Camera;
-import ea.Game;
-import ea.Scene;
-import ea.Vector;
-import ea.animation.interpolation.EaseInOutFloat;
-import ea.animation.interpolation.LinearFloat;
-import ea.internal.Bounds;
+import de.pirckheimer_gymnasium.engine_pi.Camera;
+import de.pirckheimer_gymnasium.engine_pi.Game;
+import de.pirckheimer_gymnasium.engine_pi.Scene;
+import de.pirckheimer_gymnasium.engine_pi.Vector;
+import de.pirckheimer_gymnasium.engine_pi.animation.interpolation.EaseInOutDouble;
+import de.pirckheimer_gymnasium.engine_pi.animation.interpolation.LinearDouble;
+import de.pirckheimer_gymnasium.engine_pi.Bounds;
 import rocks.friedrich.jwinf.blockly_robot.gui.scenes.WindowScene;
 
 public class Controller
@@ -19,13 +19,13 @@ public class Controller
 
     public static void toggleInterpolator()
     {
-        if (!(State.interpolator instanceof EaseInOutFloat))
+        if (!(State.interpolator instanceof EaseInOutDouble))
         {
-            State.interpolator = new EaseInOutFloat(0, 1);
+            State.interpolator = new EaseInOutDouble(0, 1);
         }
         else
         {
-            State.interpolator = new LinearFloat(0, 1);
+            State.interpolator = new LinearDouble(0, 1);
         }
     }
 
@@ -44,7 +44,7 @@ public class Controller
         else
         {
             Game.transitionToScene(scene);
-            Game.setFrameSize(width, height);
+            Game.setWindowSize(width, height);
         }
     }
 
@@ -52,13 +52,13 @@ public class Controller
     {
         Scene scene = (Scene) windowScene;
         Camera camera = scene.getCamera();
-        float pixelPerMeter = camera.getZoom();
+        double pixelPerMeter = camera.getMeter();
         Bounds bounds = windowScene.getWindowBounds();
         Vector center = bounds.getCenter();
         camera.setPostion(center.getX(), center.getY());
         Game.setTitle(windowScene.getTitle());
-        launchScene(Math.round(pixelPerMeter * bounds.getWidth()),
-                Math.round(pixelPerMeter * bounds.getHeight()),
+        launchScene((int) Math.round(pixelPerMeter * bounds.width()),
+                (int) Math.round(pixelPerMeter * bounds.height()),
                 (Scene) windowScene);
     }
 

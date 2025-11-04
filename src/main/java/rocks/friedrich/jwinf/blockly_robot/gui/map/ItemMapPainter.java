@@ -1,7 +1,7 @@
 package rocks.friedrich.jwinf.blockly_robot.gui.map;
 
-import ea.Scene;
-import ea.actor.Image;
+import de.pirckheimer_gymnasium.engine_pi.Scene;
+import de.pirckheimer_gymnasium.engine_pi.actor.Image;
 import rocks.friedrich.jwinf.blockly_robot.logic.context.Context;
 import rocks.friedrich.jwinf.blockly_robot.logic.item.Item;
 import rocks.friedrich.jwinf.blockly_robot.logic.item.StackedItems;
@@ -19,7 +19,7 @@ public class ItemMapPainter
                 context.getCols());
     }
 
-    public void paint(Scene scene, float x, float y)
+    public void paint(Scene scene, double x, double y)
     {
         translate.setPosition(x, y);
         for (int row = 0; row < context.getRows(); row++)
@@ -46,7 +46,7 @@ public class ItemMapPainter
         }
     }
 
-    private void paintItem(Scene scene, float x, float y, Item item)
+    private void paintItem(Scene scene, double x, double y, Item item)
     {
         Image image = createImage(item, scene);
         if (image == null)

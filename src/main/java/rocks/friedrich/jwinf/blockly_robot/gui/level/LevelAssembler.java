@@ -1,7 +1,7 @@
 package rocks.friedrich.jwinf.blockly_robot.gui.level;
 
-import ea.Scene;
-import ea.Vector;
+import de.pirckheimer_gymnasium.engine_pi.Scene;
+import de.pirckheimer_gymnasium.engine_pi.Vector;
 import rocks.friedrich.jwinf.blockly_robot.gui.Color;
 import rocks.friedrich.jwinf.blockly_robot.gui.map.Grid;
 import rocks.friedrich.jwinf.blockly_robot.gui.map.ItemMapPainter;
@@ -14,7 +14,7 @@ import rocks.friedrich.jwinf.blockly_robot.logic.robot.RobotWrapper;
  */
 public class LevelAssembler
 {
-    public static final float SHIFT = 0.5f;
+    public static final double SHIFT = 0.5f;
 
     Level level;
 
@@ -48,7 +48,7 @@ public class LevelAssembler
      * @param x - x-Koordinate der linken unteren Ecke
      * @param y - y-Koordinate der linken unteren Ecke
      */
-    public AssembledLevel placeActorsInScene(Scene scene, float x, float y)
+    public AssembledLevel placeActorsInScene(Scene scene, double x, double y)
     {
         AssembledLevel a = new AssembledLevel(level, scene, x, y);
         // Grid

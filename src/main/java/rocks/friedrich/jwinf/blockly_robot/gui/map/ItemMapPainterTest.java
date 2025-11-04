@@ -1,7 +1,7 @@
 package rocks.friedrich.jwinf.blockly_robot.gui.map;
 
-import ea.Game;
-import ea.Scene;
+import de.pirckheimer_gymnasium.engine_pi.Game;
+import de.pirckheimer_gymnasium.engine_pi.Scene;
 import rocks.friedrich.jwinf.blockly_robot.logic.Task;
 
 public class ItemMapPainterTest extends Scene

@@ -2,14 +2,14 @@ package rocks.friedrich.jwinf.blockly_robot.gui;
 
 import java.awt.Font;
 
-import ea.actor.Text;
-import ea.internal.io.FontLoader;
+import de.pirckheimer_gymnasium.engine_pi.actor.Text;
+import de.pirckheimer_gymnasium.engine_pi.Resources;
 
 public class TextMaker
 {
     public static Font loadTitillium(String style)
     {
-        return FontLoader.loadFromFile(
+        return Resources.FONTS.get(
                 "fonts/titilium/TitilliumWeb-%s.ttf".formatted(style));
     }
 
@@ -17,7 +17,7 @@ public class TextMaker
 
     public static Font bold = loadTitillium("Bold");
 
-    public static Text createText(String content, float fontSize)
+    public static Text createText(String content, double fontSize)
     {
         Text text = new Text(content, fontSize);
         text.setFont(regular);

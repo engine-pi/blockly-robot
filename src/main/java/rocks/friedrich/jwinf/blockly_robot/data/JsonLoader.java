@@ -8,7 +8,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ea.internal.io.ResourceLoader;
+import de.pirckheimer_gymnasium.engine_pi.resources.ResourceLoader;
 import rocks.friedrich.jwinf.blockly_robot.data.model.GridInfosData;
 import rocks.friedrich.jwinf.blockly_robot.data.model.MenuData;
 import rocks.friedrich.jwinf.blockly_robot.data.model.TaskData;

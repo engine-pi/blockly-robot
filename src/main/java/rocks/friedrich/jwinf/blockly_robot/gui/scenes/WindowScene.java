@@ -1,6 +1,6 @@
 package rocks.friedrich.jwinf.blockly_robot.gui.scenes;
 
-import ea.internal.Bounds;
+import de.pirckheimer_gymnasium.engine_pi.Bounds;
 
 /**
  * Szene, die Informationen mitliefert, in welchem Fenster die Szene geöffnet

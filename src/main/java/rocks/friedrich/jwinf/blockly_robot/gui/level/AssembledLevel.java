@@ -1,6 +1,6 @@
 package rocks.friedrich.jwinf.blockly_robot.gui.level;
 
-import ea.Scene;
+import de.pirckheimer_gymnasium.engine_pi.Scene;
 import rocks.friedrich.jwinf.blockly_robot.gui.map.CoordinateSystemTranslator;
 import rocks.friedrich.jwinf.blockly_robot.gui.map.GraphicalItemController;
 import rocks.friedrich.jwinf.blockly_robot.gui.map.Grid;
@@ -24,7 +24,7 @@ public class AssembledLevel
 
     public CoordinateSystemTranslator translate;
 
-    public AssembledLevel(Level level, Scene scene, float x, float y)
+    public AssembledLevel(Level level, Scene scene, double x, double y)
     {
         this.level = level;
         this.scene = scene;

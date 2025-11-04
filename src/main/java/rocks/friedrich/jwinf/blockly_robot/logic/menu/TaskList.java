@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import ea.internal.io.ResourceLoader;
+import de.pirckheimer_gymnasium.engine_pi.resources.ResourceLoader;
 import rocks.friedrich.jwinf.blockly_robot.logic.Task;
 
 public class TaskList

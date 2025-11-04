@@ -17,7 +17,7 @@ public abstract class Solver<T>
 {
     public String taskPath;
 
-    private static float zoom = 60;
+    private static double zoom = 60;
 
     public Solver(String taskPath)
     {
@@ -83,7 +83,7 @@ public abstract class Solver<T>
     public void solve(Object difficutly, int test)
     {
         LevelsScene scene = new LevelsScene(taskPath, difficutly, test);
-        scene.getCamera().setZoom(zoom);
+        scene.getCamera().setMeter(zoom);
         Controller.launchScene((WindowScene) scene);
         scene.getAssembledLevels().forEach((level) -> {
             new Thread(() -> {
@@ -135,7 +135,7 @@ public abstract class Solver<T>
         return robot;
     }
 
-    public static void setZoom(float zoom) {
+    public static void setZoom(double zoom) {
         Solver.zoom = zoom;
     }
 

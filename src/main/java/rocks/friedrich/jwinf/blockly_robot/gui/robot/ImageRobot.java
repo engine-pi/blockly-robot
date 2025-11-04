@@ -4,11 +4,11 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
 
-import ea.Vector;
-import ea.actor.Image;
-import ea.animation.Interpolator;
-import ea.animation.ValueAnimator;
-import ea.animation.interpolation.SinusFloat;
+import de.pirckheimer_gymnasium.engine_pi.Vector;
+import de.pirckheimer_gymnasium.engine_pi.actor.Image;
+import de.pirckheimer_gymnasium.engine_pi.animation.Interpolator;
+import de.pirckheimer_gymnasium.engine_pi.animation.ValueAnimator;
+import de.pirckheimer_gymnasium.engine_pi.animation.interpolation.SinusDouble;
 import rocks.friedrich.jwinf.blockly_robot.gui.State;
 import rocks.friedrich.jwinf.blockly_robot.gui.level.AssembledLevel;
 import rocks.friedrich.jwinf.blockly_robot.logic.item.Item;
@@ -30,7 +30,7 @@ public class ImageRobot extends Image implements Robot
      */
     private boolean inMotion = false;
 
-    protected float speed = 1f;
+    protected double speed = 1f;
 
     public ImageRobot(String filepath, VirtualRobot virtual,
             AssembledLevel level)
@@ -99,7 +99,7 @@ public class ImageRobot extends Image implements Robot
         inMotion = true;
         Vector from = getCenter();
         Vector vector = new Vector(from, to);
-        float duration = (float) 1 / speed / 2;
+        double duration = (float) 1 / speed / 2;
         animate(duration, progress -> {
             setCenter(from.add(vector.multiply(progress)));
         });
@@ -187,20 +187,20 @@ public class ImageRobot extends Image implements Robot
         this.wiggleAnimated(0.3f);
     }
 
-    private void wiggleAnimated(float duration)
+    private void wiggleAnimated(double duration)
     {
         if (inMotion)
         {
             return;
         }
         inMotion = true;
-        float rotation = getRotation();
+        double rotation = getRotation();
         Vector center = getCenter();
         wait(0.1);
         animate(duration, progress -> {
             setRotation(rotation + progress);
             setCenter(center);
-        }, new SinusFloat(0, 45));
+        }, new SinusDouble(0, 45));
         wait(0.1);
         inMotion = false;
     }
@@ -218,11 +218,11 @@ public class ImageRobot extends Image implements Robot
         // case WEST: 180;
         // case SOUTH: 270;
         // To avoid high rotation numbers
-        float start = getRotation() % 360;
+        double start = getRotation() % 360;
         setRotation(start);
-        float duration = 1 / speed / 4;
+        double duration = 1 / speed / 4;
         animate(duration, progress -> {
-            setRotation(start + progress * (float) degree);
+            setRotation(start + progress * degree);
             setCenter(center);
         });
         inMotion = false;
@@ -304,11 +304,11 @@ public class ImageRobot extends Image implements Robot
         return performMovement(virtual.turnAround());
     }
 
-    private void animate(float duration, Consumer<Float> setter,
-            Interpolator<Float> interpolator)
+    private void animate(double duration, Consumer<Double> setter,
+            Interpolator<Double> interpolator)
     {
         CompletableFuture<Void> future = new CompletableFuture<>();
-        ValueAnimator<Float> animator = new ValueAnimator<>(duration, setter,
+        ValueAnimator<Double> animator = new ValueAnimator<>(duration, setter,
                 interpolator, this);
         animator.addCompletionListener(value -> {
             setter.accept(value);
@@ -325,7 +325,7 @@ public class ImageRobot extends Image implements Robot
         }
     }
 
-    private void animate(float duration, Consumer<Float> setter)
+    private void animate(double duration, Consumer<Double> setter)
     {
         animate(duration, setter, State.interpolator);
     }

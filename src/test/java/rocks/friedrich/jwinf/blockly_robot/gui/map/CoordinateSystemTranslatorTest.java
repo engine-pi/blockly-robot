@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import ea.Vector;
+import de.pirckheimer_gymnasium.engine_pi.Vector;
 import rocks.friedrich.jwinf.blockly_robot.logic.navigation.Coords;
 
 public class CoordinateSystemTranslatorTest

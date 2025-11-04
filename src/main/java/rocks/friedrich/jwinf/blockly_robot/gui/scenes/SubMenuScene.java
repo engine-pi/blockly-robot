@@ -1,9 +1,9 @@
 package rocks.friedrich.jwinf.blockly_robot.gui.scenes;
 
-import ea.Game;
-import ea.Scene;
-import ea.actor.Text;
-import ea.internal.Bounds;
+import de.pirckheimer_gymnasium.engine_pi.Game;
+import de.pirckheimer_gymnasium.engine_pi.Scene;
+import de.pirckheimer_gymnasium.engine_pi.actor.Text;
+import de.pirckheimer_gymnasium.engine_pi.Bounds;
 import rocks.friedrich.jwinf.blockly_robot.gui.Color;
 import rocks.friedrich.jwinf.blockly_robot.gui.Controller;
 import rocks.friedrich.jwinf.blockly_robot.gui.TextMaker;
@@ -11,21 +11,21 @@ import rocks.friedrich.jwinf.blockly_robot.gui.State;
 
 public class SubMenuScene extends Scene implements WindowScene
 {
-    private final float FONT_SIZE = 0.8f;
+    private final double FONT_SIZE = 0.8f;
 
-    private final float INITIAL_X = 0;
+    private final double INITIAL_X = 0;
 
-    private final float INITIAL_Y = 0;
+    private final double INITIAL_Y = 0;
 
     /**
      * aktuelle x-Position.
      */
-    private float x = INITIAL_X;
+    private double x = INITIAL_X;
 
     /**
      * aktuelle y-Position.
      */
-    private float y = INITIAL_Y;
+    private double y = INITIAL_Y;
 
     private final String main;
 
@@ -45,7 +45,7 @@ public class SubMenuScene extends Scene implements WindowScene
                     }
                 });
                 text.addFrameUpdateListener((deltaSeconds) -> {
-                    if (text.contains(Game.getMousePositionInCurrentScene()))
+                    if (text.contains(Game.getMousePosition()))
                     {
                         text.setOpacity(0.5f);
                     }

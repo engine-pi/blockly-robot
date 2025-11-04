@@ -1,8 +1,8 @@
 package rocks.friedrich.jwinf.blockly_robot.logic.navigation;
 
-import static ea.Direction.*;
+import static de.pirckheimer_gymnasium.engine_pi.Direction.*;
 
-import ea.Direction;
+import de.pirckheimer_gymnasium.engine_pi.Direction;
 
 /**
  * Rough direction of the four main cardinal points /

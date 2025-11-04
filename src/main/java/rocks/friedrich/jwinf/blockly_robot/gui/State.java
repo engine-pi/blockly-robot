@@ -1,7 +1,7 @@
 package rocks.friedrich.jwinf.blockly_robot.gui;
 
-import ea.animation.Interpolator;
-import ea.animation.interpolation.EaseInOutFloat;
+import de.pirckheimer_gymnasium.engine_pi.animation.Interpolator;
+import de.pirckheimer_gymnasium.engine_pi.animation.interpolation.EaseInOutDouble;
 import rocks.friedrich.jwinf.blockly_robot.gui.robot.ImageRobot;
 import rocks.friedrich.jwinf.blockly_robot.logic.Task;
 import rocks.friedrich.jwinf.blockly_robot.logic.level.Level;
@@ -11,7 +11,7 @@ public class State
 {
     public static int pixelPerMeter = 60;
 
-    public static Interpolator<Float> interpolator = new EaseInOutFloat(0, 1);
+    public static Interpolator<Double> interpolator = new EaseInOutDouble(0, 1);
 
     public static int speed = 1;
 

@@ -3,8 +3,8 @@ package rocks.friedrich.jwinf.blockly_robot.gui.map;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-import ea.actor.Actor;
-import ea.internal.FixtureBuilder;
+import de.pirckheimer_gymnasium.engine_pi.actor.Actor;
+import de.pirckheimer_gymnasium.engine_pi.physics.FixtureBuilder;
 
 public class Grid extends Actor
 {
@@ -17,15 +17,15 @@ public class Grid extends Actor
      * 60 Pixel und dieses Attribut auf 2 gesetzt, dann werden die vom Gitter
      * eingeschlossenen Rechtecke 120 auf 120 Pixel groß.
      */
-    float size = 1;
+    double size = 1;
 
     Color color = Color.GREEN;
 
     Color background;
 
-    public Grid(int numX, int numY, float size)
+    public Grid(int numX, int numY, double size)
     {
-        super(() -> FixtureBuilder.createSimpleRectangularFixture(numX * size,
+        super(() -> FixtureBuilder.rectangle(numX * size,
                 numY * size));
         this.numX = numX;
         this.numY = numY;
@@ -37,9 +37,10 @@ public class Grid extends Actor
         this(numX, numY, 1);
     }
 
-    public void setColor(Color color)
+    public Actor setColor(Color color)
     {
         this.color = color;
+        return this;
     }
 
     public void setBackground(Color color)
@@ -48,9 +49,9 @@ public class Grid extends Actor
     }
 
     @Override
-    public void render(Graphics2D g, float pixelPerMeter)
+    public void render(Graphics2D g, double pixelPerMeter)
     {
-        int gridSize = Math.round(pixelPerMeter * size);
+        int gridSize = (int) Math.round(pixelPerMeter * size);
         if (background != null)
         {
             g.setColor(background);

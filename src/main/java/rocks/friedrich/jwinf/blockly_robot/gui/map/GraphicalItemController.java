@@ -1,7 +1,7 @@
 package rocks.friedrich.jwinf.blockly_robot.gui.map;
 
-import ea.Scene;
-import ea.actor.Image;
+import de.pirckheimer_gymnasium.engine_pi.Scene;
+import de.pirckheimer_gymnasium.engine_pi.actor.Image;
 import rocks.friedrich.jwinf.blockly_robot.gui.level.LevelAssembler;
 import rocks.friedrich.jwinf.blockly_robot.logic.item.Item;
 import rocks.friedrich.jwinf.blockly_robot.logic.item.ItemController;
