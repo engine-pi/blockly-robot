@@ -1,3 +1,8 @@
+> [!NOTE]
+> Dieses Repository wurde archiviert.
+> Der Java-Code ist als Submodul in die [Engine Pi](https://github.com/engine-pi/engine-pi/tree/main/modules/games/blockly-robot) integriert.
+> Die Medien-Dateien finden sich im [assets](https://github.com/engine-pi/assets/tree/main/blockly-robot)-Repository.
+
 # Die Trainingsaufgaben des Jugendwettbewerbs Informatik in Java
 
 Ein Versuch die
