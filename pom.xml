@@ -4,8 +4,8 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>rocks.friedrich.jwinf</groupId>
-    <artifactId>jwinf</artifactId>
+    <groupId>de.pirckheimer-gymnasium</groupId>
+    <artifactId>blockly-robot</artifactId>
     <version>0.0.1</version>
 
     <properties>
@@ -27,22 +27,13 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.15.3</version>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.5.2</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>project-repository</id>
-            <url>file://${project.basedir}/repository</url>
-        </repository>
-    </repositories>
 
     <distributionManagement>
         <snapshotRepository>
